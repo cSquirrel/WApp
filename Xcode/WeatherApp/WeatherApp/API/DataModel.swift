@@ -58,6 +58,22 @@ extension Location {
                                       forecastByDay: forecastByDay)
         return result
     }
+    
+    static func create(fromLocationAsJsonData jsonData: Data) -> Location? {
+        
+        guard
+            let jsonObject = try? JSONSerialization.jsonObject(with: jsonData, options: []),
+            let locationAsJsonObject = jsonObject as? [String:Any] else {
+                return nil
+        }
+        
+        guard let result = create(fromJson: locationAsJsonObject) else {
+            return nil
+        }
+        
+        return result
+    }
+    
 }
 
 extension Forecast {
