@@ -51,14 +51,19 @@ class ForecastTests: XCTestCase {
 
     func testCreateFromJsonArray() {
         // prepare
-        let jsonData = TestUtils.loadJSONDictionary(fileName: "simple_location")!
-        let jsonArray = jsonData["list"] as! [[String:Any]]
+        let jsonArray = TestUtils.loadJSONArray(fileName: "multiple_forecasts")!
         
         // execute
         let result = Forecast.create(fromJsonArray: jsonArray)
         
         // verify
         XCTAssertNotNil(result)
-        XCTAssertEqual(result.count, 1)
+        XCTAssertEqual(result.count, 2)
+        let day1 = result["2017-05-29"]
+        XCTAssertNotNil(day1)
+        XCTAssertEqual(day1!.count, 2)
+        let day2 = result["2017-05-30"]
+        XCTAssertNotNil(day2)
+        XCTAssertEqual(day2!.count, 1)
     }
 }

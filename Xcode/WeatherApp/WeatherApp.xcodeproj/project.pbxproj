@@ -20,6 +20,7 @@
 		32BBF32F1EDCC37800CEB101 /* DataModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BBF32E1EDCC37800CEB101 /* DataModelTests.swift */; };
 		32BBF3321EDCC3C400CEB101 /* simple_location.json in Resources */ = {isa = PBXBuildFile; fileRef = 32BBF3311EDCC3C400CEB101 /* simple_location.json */; };
 		32BBF3341EDCC3CF00CEB101 /* simple_forecast.json in Resources */ = {isa = PBXBuildFile; fileRef = 32BBF3331EDCC3CF00CEB101 /* simple_forecast.json */; };
+		32BBF3361EDCCF6900CEB101 /* multiple_forecasts.json in Resources */ = {isa = PBXBuildFile; fileRef = 32BBF3351EDCCF6900CEB101 /* multiple_forecasts.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		32BBF32E1EDCC37800CEB101 /* DataModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModelTests.swift; sourceTree = "<group>"; };
 		32BBF3311EDCC3C400CEB101 /* simple_location.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = simple_location.json; sourceTree = "<group>"; };
 		32BBF3331EDCC3CF00CEB101 /* simple_forecast.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = simple_forecast.json; sourceTree = "<group>"; };
+		32BBF3351EDCCF6900CEB101 /* multiple_forecasts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = multiple_forecasts.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +173,7 @@
 			children = (
 				32BBF3311EDCC3C400CEB101 /* simple_location.json */,
 				32BBF3331EDCC3CF00CEB101 /* simple_forecast.json */,
+				32BBF3351EDCCF6900CEB101 /* multiple_forecasts.json */,
 			);
 			path = MockData;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32BBF3361EDCCF6900CEB101 /* multiple_forecasts.json in Resources */,
 				32BBF3341EDCC3CF00CEB101 /* simple_forecast.json in Resources */,
 				32BBF3321EDCC3C400CEB101 /* simple_location.json in Resources */,
 			);

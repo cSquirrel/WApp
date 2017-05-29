@@ -32,5 +32,16 @@ class TestUtils: NSObject {
         return result
     }
     
+    static func loadJSONArray(fileName: String) -> [[String:Any]]? {
+        
+        guard let jsonData = loadJSONData(fileName: fileName),
+            let jsonObject = try? JSONSerialization.jsonObject(with: jsonData, options: []),
+            let result = jsonObject as? [[String:Any]] else {
+                return nil
+        }
+        
+        return result
+    }
+    
 }
 
