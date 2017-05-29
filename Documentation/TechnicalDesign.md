@@ -45,7 +45,7 @@ Represents a location with forecast data
 
 | property        | type           | JSON mapping  | description  |
 |-----------------|----------------|---------------|--------------|
-|cityId|String|city.id|City ID
+|cityId|Int|city.id|City ID
 |name|String|city.name|City name
 |forecastByDay|[String:Forecast]| N/A |Forecast elements groupped by day|
 
