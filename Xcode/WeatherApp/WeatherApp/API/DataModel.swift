@@ -10,7 +10,7 @@ import Foundation
 
 struct Location {
     
-    let cityId: String
+    let cityId: Int
     let name: String
     let forecastByDay: [String:Forecast]
     
@@ -32,12 +32,20 @@ extension Location {
     
     static func create(fromJson: Data) -> Location? {
         return nil
+    static func create(fromJson json: [String:Any?]) -> Location? {
+    static func create(fromJson json: [String:Any]) -> Location? {
     }
 }
 
 extension Forecast {
     
     static func create(fromJson: Data) -> Forecast? {
+    static func create(fromJson json: [String:Any?]) -> Forecast? {
+    static func create(fromJsonArray json: [[String:Any]]) -> [String:Forecast] {
+        return [:]
+    }
+    
+    static func create(fromJson json: [String:Any]) -> Forecast? {
         return nil
     }
 }

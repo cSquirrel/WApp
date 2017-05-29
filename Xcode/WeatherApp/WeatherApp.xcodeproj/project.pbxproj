@@ -16,6 +16,10 @@
 		32BBF3221EDCBEE700CEB101 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BBF3211EDCBEE700CEB101 /* DataModel.swift */; };
 		32BBF3241EDCBEF900CEB101 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BBF3231EDCBEF900CEB101 /* APIService.swift */; };
 		32BBF3261EDCBF0A00CEB101 /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BBF3251EDCBF0A00CEB101 /* NetworkingService.swift */; };
+		32BBF32C1EDCC34700CEB101 /* TestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BBF32B1EDCC34700CEB101 /* TestUtils.swift */; };
+		32BBF32F1EDCC37800CEB101 /* DataModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BBF32E1EDCC37800CEB101 /* DataModelTests.swift */; };
+		32BBF3321EDCC3C400CEB101 /* simple_location.json in Resources */ = {isa = PBXBuildFile; fileRef = 32BBF3311EDCC3C400CEB101 /* simple_location.json */; };
+		32BBF3341EDCC3CF00CEB101 /* simple_forecast.json in Resources */ = {isa = PBXBuildFile; fileRef = 32BBF3331EDCC3CF00CEB101 /* simple_forecast.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,10 @@
 		32BBF3211EDCBEE700CEB101 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		32BBF3231EDCBEF900CEB101 /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		32BBF3251EDCBF0A00CEB101 /* NetworkingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
+		32BBF32B1EDCC34700CEB101 /* TestUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestUtils.swift; sourceTree = "<group>"; };
+		32BBF32E1EDCC37800CEB101 /* DataModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModelTests.swift; sourceTree = "<group>"; };
+		32BBF3311EDCC3C400CEB101 /* simple_location.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = simple_location.json; sourceTree = "<group>"; };
+		32BBF3331EDCC3CF00CEB101 /* simple_forecast.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = simple_forecast.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,7 +124,10 @@
 		32BBF3051EDCBEA300CEB101 /* WeatherAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				32BBF3301EDCC3B800CEB101 /* MockData */,
+				32BBF32D1EDCC37800CEB101 /* API */,
 				32BBF3081EDCBEA300CEB101 /* Info.plist */,
+				32BBF32B1EDCC34700CEB101 /* TestUtils.swift */,
 			);
 			path = WeatherAppTests;
 			sourceTree = "<group>";
@@ -145,6 +156,23 @@
 				32BBF3251EDCBF0A00CEB101 /* NetworkingService.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		32BBF32D1EDCC37800CEB101 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				32BBF32E1EDCC37800CEB101 /* DataModelTests.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		32BBF3301EDCC3B800CEB101 /* MockData */ = {
+			isa = PBXGroup;
+			children = (
+				32BBF3311EDCC3C400CEB101 /* simple_location.json */,
+				32BBF3331EDCC3CF00CEB101 /* simple_forecast.json */,
+			);
+			path = MockData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,6 +249,7 @@
 					32BBF3011EDCBEA300CEB101 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = FXYZH4KYS4;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 32BBF2ED1EDCBEA300CEB101;
 					};
@@ -267,6 +296,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32BBF3341EDCC3CF00CEB101 /* simple_forecast.json in Resources */,
+				32BBF3321EDCC3C400CEB101 /* simple_location.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +327,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32BBF32F1EDCC37800CEB101 /* DataModelTests.swift in Sources */,
+				32BBF32C1EDCC34700CEB101 /* TestUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,11 +499,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = FXYZH4KYS4;
 				INFOPLIST_FILE = WeatherAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.csquirrel.WeatherAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WeatherApp.app/WeatherApp";
 			};
@@ -481,6 +516,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = FXYZH4KYS4;
 				INFOPLIST_FILE = WeatherAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
