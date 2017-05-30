@@ -15,6 +15,7 @@ class ViewController: UITableViewController {
     
     fileprivate var selectedLocation: Location? = nil
     fileprivate var sortedForecastsByDay: [String] = []
+    fileprivate let spinnerView = LoadingSpinnerView()
     
     override func viewDidLoad() {
         doRefresh(sender: nil)
@@ -23,6 +24,7 @@ class ViewController: UITableViewController {
     @IBAction func doRefresh(sender: Any?) {
         
         refresh.isEnabled = false
+        spinnerView.show(inView: self.view)
         appConfig.apiAccess.fetchForecast(query: ForecastAPIQuery(cityId: 2643743)) { [weak self] (result: ForecastResultStatus) in
             switch(result) {
                 case .success(let location):
@@ -35,6 +37,7 @@ class ViewController: UITableViewController {
             }
             DispatchQueue.main.async {
                 self?.refresh.isEnabled = true
+                self?.spinnerView.hide()
             }
         }
     }
@@ -82,6 +85,8 @@ extension ViewController {
         if let forecastCellView = result as? ForecastCellView {
             forecastCellView.title.text = title
             forecastCellView.forecastDetails = forecastDetails
+            forecastCellView.backgroundColorShift = (indexPath.row % 2) == 0
+            
         }
         
         return result

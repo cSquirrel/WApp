@@ -13,6 +13,9 @@
 		320E63EE1EDCF33C00C3161C /* ForecastDetailsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320E63ED1EDCF33C00C3161C /* ForecastDetailsCollectionView.swift */; };
 		320E63F01EDCF3E900C3161C /* ForecastDetailsViewCellCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320E63EF1EDCF3E900C3161C /* ForecastDetailsViewCellCollection.swift */; };
 		320E63F31EDCF7C900C3161C /* ApplicationConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320E63F21EDCF7C900C3161C /* ApplicationConfiguration.swift */; };
+		32893E741EDD0A4F00B7F601 /* LoadingSpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32893E721EDD0A4F00B7F601 /* LoadingSpinnerView.swift */; };
+		32893E751EDD0A4F00B7F601 /* LoadingSpinnerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32893E731EDD0A4F00B7F601 /* LoadingSpinnerView.xib */; };
+		32893E771EDD0A6D00B7F601 /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32893E761EDD0A6D00B7F601 /* DesignableView.swift */; };
 		32BBF2F71EDCBEA300CEB101 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32BBF2F51EDCBEA300CEB101 /* Main.storyboard */; };
 		32BBF2F91EDCBEA300CEB101 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32BBF2F81EDCBEA300CEB101 /* Assets.xcassets */; };
 		32BBF2FC1EDCBEA300CEB101 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32BBF2FA1EDCBEA300CEB101 /* LaunchScreen.storyboard */; };
@@ -57,6 +60,9 @@
 		320E63ED1EDCF33C00C3161C /* ForecastDetailsCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastDetailsCollectionView.swift; sourceTree = "<group>"; };
 		320E63EF1EDCF3E900C3161C /* ForecastDetailsViewCellCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastDetailsViewCellCollection.swift; sourceTree = "<group>"; };
 		320E63F21EDCF7C900C3161C /* ApplicationConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationConfiguration.swift; sourceTree = "<group>"; };
+		32893E721EDD0A4F00B7F601 /* LoadingSpinnerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingSpinnerView.swift; sourceTree = "<group>"; };
+		32893E731EDD0A4F00B7F601 /* LoadingSpinnerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingSpinnerView.xib; sourceTree = "<group>"; };
+		32893E761EDD0A6D00B7F601 /* DesignableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
 		32BBF2EE1EDCBEA300CEB101 /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32BBF2F61EDCBEA300CEB101 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		32BBF2F81EDCBEA300CEB101 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -121,6 +127,9 @@
 		320E63EA1EDCF07400C3161C /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				32893E761EDD0A6D00B7F601 /* DesignableView.swift */,
+				32893E721EDD0A4F00B7F601 /* LoadingSpinnerView.swift */,
+				32893E731EDD0A4F00B7F601 /* LoadingSpinnerView.xib */,
 				320E63EB1EDCF08300C3161C /* ForecastCellView.swift */,
 				320E63ED1EDCF33C00C3161C /* ForecastDetailsCollectionView.swift */,
 				320E63EF1EDCF3E900C3161C /* ForecastDetailsViewCellCollection.swift */,
@@ -354,6 +363,7 @@
 				32BBF2FC1EDCBEA300CEB101 /* LaunchScreen.storyboard in Resources */,
 				32BBF2F91EDCBEA300CEB101 /* Assets.xcassets in Resources */,
 				32BBF2F71EDCBEA300CEB101 /* Main.storyboard in Resources */,
+				32893E751EDD0A4F00B7F601 /* LoadingSpinnerView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,6 +395,8 @@
 				320E63F31EDCF7C900C3161C /* ApplicationConfiguration.swift in Sources */,
 				320E63F01EDCF3E900C3161C /* ForecastDetailsViewCellCollection.swift in Sources */,
 				320E63E81EDCEF0200C3161C /* AppDelegate.swift in Sources */,
+				32893E771EDD0A6D00B7F601 /* DesignableView.swift in Sources */,
+				32893E741EDD0A4F00B7F601 /* LoadingSpinnerView.swift in Sources */,
 				32BBF3261EDCBF0A00CEB101 /* NetworkingService.swift in Sources */,
 				32BBF3411EDCE89E00CEB101 /* NetworkOperationsExecutor.swift in Sources */,
 				320E63EC1EDCF08300C3161C /* ForecastCellView.swift in Sources */,

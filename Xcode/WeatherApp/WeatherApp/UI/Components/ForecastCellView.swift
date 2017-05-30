@@ -12,6 +12,7 @@ class ForecastCellView: UITableViewCell {
 
     @IBOutlet weak var title: UILabel!
     var forecastDetails:[Forecast]!
+    var backgroundColorShift:Bool = false
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
@@ -26,6 +27,9 @@ extension ForecastCellView: UICollectionViewDataSource {
         let result = collectionView.dequeueReusableCell(withReuseIdentifier: "ForecastDetailsCell", for: indexPath)
         
         if let forecastCollectionViewCell = result as? ForecastDetailsViewCellCollection {
+            
+            let isDarkCell = backgroundColorShift ? ((indexPath.row % 2) == 0) : ((indexPath.row % 2) != 0)
+            forecastCollectionViewCell.backgroundColor = isDarkCell ? UIColor.lightGray:UIColor.white
             
             let forecastDetail = forecastDetails[indexPath.row]
             let time = forecastDetail.dateTime.characters.split(separator: " ").map(String.init).last
