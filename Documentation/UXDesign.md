@@ -1,7 +1,6 @@
  
-
 <a name="Loading_data"></a>
-##Loading of data#
+## Loading of data
 ![loading of data](ux_loading_screen.png)
 
 Use cases:
@@ -15,7 +14,7 @@ Key elements:
 1. Animated feedback; tells user the app is making progress
 	
 <a name="show_valid_data"></a>
-##Show valid data
+## Show valid data
 ![show valid data](ux_show_data.png)
 
 Use cases:
@@ -33,7 +32,7 @@ Use cases:
 
 
 <a name="single_row"></a>
-##Single row of data
+## Single row of data
 ![single row of data](ux_row_of_data.png)
 
 Use cases:

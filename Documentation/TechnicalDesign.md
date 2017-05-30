@@ -1,4 +1,4 @@
-#Technical decisions
+# Technical decisions
 * cache forecast data on device to improve user experience and to reduce load on the data provider [see "Persistence/Data Caching" below](#Persistence)
 * use simple model reflecting the API model. There's no need for custom application model. [see "Model" below](#Model)
 * three main services constitue data providing services:
@@ -7,7 +7,7 @@
 	* data caching service
 
 <a name="MainServices"></a>
-##Main Services
+## Main Services
 
 ![main services](main_services.png)
 
@@ -21,7 +21,7 @@ Encapsulates data caching described in details in [Data Caching](#DataCaching)
 Understands the remote API. Can fetch data by using the networking service.
 
 <a name="DataCaching"></a>
-##Data Caching
+## Data Caching
 The persistence requirements are very simple:
 
  * persist the data received from the server,
@@ -34,13 +34,13 @@ The persistence requirements are very simple:
 All the above will be fully satisfied by saving JSON data in the file system everytime a successful response is received from the server.
 
 <a name="Model"></a>
-##Model
+## Model
 Since the application is very simple and built around the API, the application model is determined by the API. There are only two entities needed to satisfy the UI. 
 
 ![data model](data_model.png)
 
 
-##Location#
+## Location
 Represents a location with forecast data
 
 | property        | type           | JSON mapping  | description  |
@@ -49,7 +49,7 @@ Represents a location with forecast data
 |name|String|city.name|City name
 |forecastByDay|[String:[Forecast]]| N/A |Forecast elements groupped by day|
 
-##Forecast
+## Forecast
 
 | property        | type           | JSON mapping  | description  |
 |-----------------|----------------|---------------|--------------|
@@ -62,7 +62,7 @@ Represents a location with forecast data
 |humidity|Int|list.main.humidity|Humidity, %
 
 <a name="Model_v2"></a>
-##Future Model Changes
+## Future Model Changes
 Future release of the app will support:
 
 * multiple user defined locations including
@@ -72,7 +72,7 @@ Future release of the app will support:
 * using custom names on locations (i.e. "My Home")
 * more deatiled forecast information
 
-##Location
+## Location
 
 | property        | type           | JSON mapping  | description  |
 |-----------------|----------------|---------------|--------------|
@@ -81,7 +81,7 @@ Future release of the app will support:
 |longitue|Float|city.coord.lon|
 |customName|String|N/A|(optional) Custom name created by user (i.e. "Home")
 
-##Forecast
+## Forecast
 | property        | type           | JSON mapping  | description  |
 |-----------------|----------------|---------------|--------------|
 |clouds|Int|list.clouds.all|Cloudiness, %
