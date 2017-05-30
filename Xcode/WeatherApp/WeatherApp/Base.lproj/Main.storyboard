@@ -146,9 +146,12 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="appConfig" destination="3NQ-jP-916" id="iZK-1N-hvQ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mno-ax-8lG" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="3NQ-jP-916" customClass="DefaultAPIServiceConfig"/>
+                <customObject id="3NQ-jP-916" customClass="ApplicationConfiguration" customModule="WeatherApp" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="1073" y="-174"/>
         </scene>

@@ -10,6 +10,14 @@ import UIKit
 
 class ViewController: UITableViewController {
 
+    @IBOutlet weak var appConfig: ApplicationConfiguration!
+    
+    override func viewDidLoad() {
+        
+        appConfig.apiAccess.fetchForecast(query: ForecastAPIQuery(cityId: 2643743)) { (result: ForecastResultStatus) in
+            print(result)
+        }
+    }
     
     @IBAction func doRefresh(sender: Any?) {
         
