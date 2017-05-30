@@ -21,6 +21,12 @@
 		32BBF3321EDCC3C400CEB101 /* simple_location.json in Resources */ = {isa = PBXBuildFile; fileRef = 32BBF3311EDCC3C400CEB101 /* simple_location.json */; };
 		32BBF3341EDCC3CF00CEB101 /* simple_forecast.json in Resources */ = {isa = PBXBuildFile; fileRef = 32BBF3331EDCC3CF00CEB101 /* simple_forecast.json */; };
 		32BBF3361EDCCF6900CEB101 /* multiple_forecasts.json in Resources */ = {isa = PBXBuildFile; fileRef = 32BBF3351EDCCF6900CEB101 /* multiple_forecasts.json */; };
+		32BBF3381EDCDC1C00CEB101 /* DefaultNetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BBF3371EDCDC1C00CEB101 /* DefaultNetworkingService.swift */; };
+		32BBF33A1EDCE2ED00CEB101 /* APIServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BBF3391EDCE2ED00CEB101 /* APIServiceTests.swift */; };
+		32BBF33D1EDCE69400CEB101 /* MockNetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BBF33C1EDCE69400CEB101 /* MockNetworkingService.swift */; };
+		32BBF33F1EDCE79A00CEB101 /* forecast_from_server.json in Resources */ = {isa = PBXBuildFile; fileRef = 32BBF33E1EDCE79A00CEB101 /* forecast_from_server.json */; };
+		32BBF3411EDCE89E00CEB101 /* NetworkOperationsExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BBF3401EDCE89E00CEB101 /* NetworkOperationsExecutor.swift */; };
+		32BBF3431EDCE8C800CEB101 /* MockNetworkOperationsExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BBF3421EDCE8C800CEB101 /* MockNetworkOperationsExecutor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +67,12 @@
 		32BBF3311EDCC3C400CEB101 /* simple_location.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = simple_location.json; sourceTree = "<group>"; };
 		32BBF3331EDCC3CF00CEB101 /* simple_forecast.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = simple_forecast.json; sourceTree = "<group>"; };
 		32BBF3351EDCCF6900CEB101 /* multiple_forecasts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = multiple_forecasts.json; sourceTree = "<group>"; };
+		32BBF3371EDCDC1C00CEB101 /* DefaultNetworkingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultNetworkingService.swift; sourceTree = "<group>"; };
+		32BBF3391EDCE2ED00CEB101 /* APIServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIServiceTests.swift; sourceTree = "<group>"; };
+		32BBF33C1EDCE69400CEB101 /* MockNetworkingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockNetworkingService.swift; sourceTree = "<group>"; };
+		32BBF33E1EDCE79A00CEB101 /* forecast_from_server.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = forecast_from_server.json; sourceTree = "<group>"; };
+		32BBF3401EDCE89E00CEB101 /* NetworkOperationsExecutor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkOperationsExecutor.swift; sourceTree = "<group>"; };
+		32BBF3421EDCE8C800CEB101 /* MockNetworkOperationsExecutor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockNetworkOperationsExecutor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +138,7 @@
 		32BBF3051EDCBEA300CEB101 /* WeatherAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				32BBF33B1EDCE68300CEB101 /* Mock */,
 				32BBF3301EDCC3B800CEB101 /* MockData */,
 				32BBF32D1EDCC37800CEB101 /* API */,
 				32BBF3081EDCBEA300CEB101 /* Info.plist */,
@@ -156,6 +169,8 @@
 			isa = PBXGroup;
 			children = (
 				32BBF3251EDCBF0A00CEB101 /* NetworkingService.swift */,
+				32BBF3371EDCDC1C00CEB101 /* DefaultNetworkingService.swift */,
+				32BBF3401EDCE89E00CEB101 /* NetworkOperationsExecutor.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -164,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				32BBF32E1EDCC37800CEB101 /* DataModelTests.swift */,
+				32BBF3391EDCE2ED00CEB101 /* APIServiceTests.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -174,8 +190,18 @@
 				32BBF3311EDCC3C400CEB101 /* simple_location.json */,
 				32BBF3331EDCC3CF00CEB101 /* simple_forecast.json */,
 				32BBF3351EDCCF6900CEB101 /* multiple_forecasts.json */,
+				32BBF33E1EDCE79A00CEB101 /* forecast_from_server.json */,
 			);
 			path = MockData;
+			sourceTree = "<group>";
+		};
+		32BBF33B1EDCE68300CEB101 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				32BBF33C1EDCE69400CEB101 /* MockNetworkingService.swift */,
+				32BBF3421EDCE8C800CEB101 /* MockNetworkOperationsExecutor.swift */,
+			);
+			path = Mock;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,6 +326,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				32BBF3361EDCCF6900CEB101 /* multiple_forecasts.json in Resources */,
+				32BBF33F1EDCE79A00CEB101 /* forecast_from_server.json in Resources */,
 				32BBF3341EDCC3CF00CEB101 /* simple_forecast.json in Resources */,
 				32BBF3321EDCC3C400CEB101 /* simple_location.json in Resources */,
 			);
@@ -320,10 +347,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				32BBF3261EDCBF0A00CEB101 /* NetworkingService.swift in Sources */,
+				32BBF3411EDCE89E00CEB101 /* NetworkOperationsExecutor.swift in Sources */,
 				32BBF2F41EDCBEA300CEB101 /* ViewController.swift in Sources */,
 				32BBF2F21EDCBEA300CEB101 /* AppDelegate.swift in Sources */,
 				32BBF3241EDCBEF900CEB101 /* APIService.swift in Sources */,
 				32BBF3221EDCBEE700CEB101 /* DataModel.swift in Sources */,
+				32BBF3381EDCDC1C00CEB101 /* DefaultNetworkingService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,7 +360,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32BBF33A1EDCE2ED00CEB101 /* APIServiceTests.swift in Sources */,
+				32BBF33D1EDCE69400CEB101 /* MockNetworkingService.swift in Sources */,
 				32BBF32F1EDCC37800CEB101 /* DataModelTests.swift in Sources */,
+				32BBF3431EDCE8C800CEB101 /* MockNetworkOperationsExecutor.swift in Sources */,
 				32BBF32C1EDCC34700CEB101 /* TestUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -578,6 +610,7 @@
 				32BBF3181EDCBEA400CEB101 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		32BBF3191EDCBEA400CEB101 /* Build configuration list for PBXNativeTarget "WeatherAppTests" */ = {
 			isa = XCConfigurationList;
@@ -586,6 +619,7 @@
 				32BBF31B1EDCBEA400CEB101 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		32BBF31C1EDCBEA400CEB101 /* Build configuration list for PBXNativeTarget "WeatherAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -594,6 +628,7 @@
 				32BBF31E1EDCBEA400CEB101 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

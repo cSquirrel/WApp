@@ -8,6 +8,19 @@
 
 import UIKit
 
-class NetworkingService: NSObject {
+public enum NetworkOperationStatus {
+    
+    case successful(Data)
+    case failed(Error?)
+    
+}
 
+public typealias NetworkOperationBlock = (_ session: URLSession) -> ()
+
+public typealias NetworkOperationResult = (_ result: NetworkOperationStatus) -> Void
+
+public protocol NetworkingService {
+    
+    func createGETOperation(url: URL, operationResult: @escaping NetworkOperationResult) -> NetworkOperationBlock
+    
 }
