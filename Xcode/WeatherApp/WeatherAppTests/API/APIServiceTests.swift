@@ -16,6 +16,7 @@ class DefaultAPIServiceConfigTests: XCTestCase {
         // prepare
         let baseURL = URL(string:"http://bbc.co.uk/api/")!
         let config = DefaultAPIServiceConfig(networkingService: MockNetworkingService(),
+                                             networkOperationsExecutor: MockNetworkOperationsExecutor(),
                                              baseURL: baseURL,
                                              apiKey: "dummy_key")
         
@@ -35,6 +36,7 @@ class DefaultAPIServiceConfigTests: XCTestCase {
         // prepare
         let baseURL = URL(string:"http://bbc.co.uk/api/")!
         let config = DefaultAPIServiceConfig(networkingService: MockNetworkingService(),
+                                             networkOperationsExecutor: MockNetworkOperationsExecutor(),
                                              baseURL: baseURL,
                                              apiKey: "dummy_key")
         
@@ -92,10 +94,11 @@ class DefaultAPIServiceTests: XCTestCase {
         super.setUp()
         
         networkingService = MockNetworkingService()
-//        let e = MockNetworkOperationsExecutor()
+        let e = MockNetworkOperationsExecutor()
         let config = DefaultAPIServiceConfig(networkingService: networkingService,
-                                        baseURL: URL(string:"http://bbc.co.uk/api")!,
-                                        apiKey: "dummy_key")
+                                             networkOperationsExecutor: e,
+                                             baseURL: URL(string:"http://bbc.co.uk/api")!,
+                                             apiKey: "dummy_key")
         api = DefaultAPIService(config)
     }
     
@@ -110,7 +113,7 @@ class DefaultAPIServiceTests: XCTestCase {
         let jsonData = TestUtils.loadJSONData(fileName: "forecast_from_server")!
         networkingService.mockDataToReturn = jsonData
         
-        let query = ForecastAPIQuery(cityId: 1029384756)
+        let query = ForecastAPIQuery(cityId: 2643743)
         var returnedLocation:Location? = nil
         let shouldReturnLocation = expectation(description: "Should return forecast")
         let result:DefaultAPIService.FetchForecastResult = {(status: ForecastResultStatus) in
@@ -129,5 +132,7 @@ class DefaultAPIServiceTests: XCTestCase {
         // verify
         XCTAssertNotNil(returnedLocation)
         XCTAssertEqual(returnedLocation?.forecastByDay.keys.count, 5)
+        XCTAssertEqual(returnedLocation?.cityId, 2643743)
+        XCTAssertEqual(returnedLocation?.name, "London")
     }
 }

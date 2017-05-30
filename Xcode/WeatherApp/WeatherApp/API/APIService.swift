@@ -44,6 +44,7 @@ struct ForecastAPIQuery {
 struct DefaultAPIServiceConfig {
     
     let networkingService: NetworkingService
+    let networkOperationsExecutor: NetworkOperationsExecutor
     let baseURL: URL
     let apiKey: String
     
@@ -103,7 +104,7 @@ class DefaultAPIService: NSObject {
         queryParams[Const.apiKeyQueryParam] = config.apiKey
         let endpointURL = config.createEndpointURL(servicePath: Const.endpointForecast, queryParams: queryParams)
         let fetchDataOp = config.networkingService.createGETOperation(url: endpointURL, operationResult: result)
-        // TODO: execute the network operation
+        config.networkOperationsExecutor.execute(operation: fetchDataOp)
     }
     
 }

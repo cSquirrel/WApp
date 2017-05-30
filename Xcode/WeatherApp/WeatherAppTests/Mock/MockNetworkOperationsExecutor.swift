@@ -7,7 +7,11 @@
 //
 
 import UIKit
+@testable import WeatherApp
 
-class MockNetworkOperationsExecutor: NSObject {
-
+class MockNetworkOperationsExecutor: NetworkOperationsExecutor {
+    
+    func execute(operation: @escaping NetworkOperationBlock) {
+        operation(URLSession())
+    }
 }
