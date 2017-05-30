@@ -18,7 +18,8 @@ class DefaultAPIServiceConfigTests: XCTestCase {
         let config = DefaultAPIServiceConfig(networkingService: MockNetworkingService(),
                                              networkOperationsExecutor: MockNetworkOperationsExecutor(),
                                              baseURL: baseURL,
-                                             apiKey: "dummy_key")
+                                             apiKey: "dummy_key",
+                                             cachingService: nil)
         
         // execute
         let result = config.createEndpointURL(servicePath: "service/path")
@@ -38,7 +39,8 @@ class DefaultAPIServiceConfigTests: XCTestCase {
         let config = DefaultAPIServiceConfig(networkingService: MockNetworkingService(),
                                              networkOperationsExecutor: MockNetworkOperationsExecutor(),
                                              baseURL: baseURL,
-                                             apiKey: "dummy_key")
+                                             apiKey: "dummy_key",
+                                             cachingService: nil)
         
         // execute
         let result = config.createEndpointURL(servicePath: "service/path", queryParams:["key1":"value1",
@@ -98,7 +100,8 @@ class DefaultAPIServiceTests: XCTestCase {
         let config = DefaultAPIServiceConfig(networkingService: networkingService,
                                              networkOperationsExecutor: e,
                                              baseURL: URL(string:"http://bbc.co.uk/api")!,
-                                             apiKey: "dummy_key")
+                                             apiKey: "dummy_key",
+                                             cachingService: nil)
         api = DefaultAPIService(config)
     }
     
