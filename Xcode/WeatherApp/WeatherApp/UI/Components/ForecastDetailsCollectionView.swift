@@ -9,28 +9,5 @@
 import UIKit
 
 class ForecastDetailsCollectionView: UICollectionView {
-
-//    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        
-//        return 6
-//    }
-//    
-//    
-//    // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
-//    @available(iOS 6.0, *)
-//    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        
-//        let result = collectionView.dequeueReusableCell(withReuseIdentifier: "ForecastDetailsCell", for: indexPath)
-//        
-//        if let forecastCollectionViewCell = result as? ForecastDetailsViewCellCollection {
-//
-//            forecastCollectionViewCell.time.text = "13:00:00"
-//            forecastCollectionViewCell.weatherDescription.text = "very hot\n and sunny"
-//            forecastCollectionViewCell.tempHumidity.text = "20C / 80%"
-//            forecastCollectionViewCell.pressure.text = "666 hPa"
-//        }
-//        
-//        return result
-//    }
     
 }

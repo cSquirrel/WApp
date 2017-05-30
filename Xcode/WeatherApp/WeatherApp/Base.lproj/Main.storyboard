@@ -31,7 +31,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="20" id="Usg-vz-ZWg"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -57,7 +57,7 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="21" id="KUs-CA-Vtz"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -148,6 +148,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="appConfig" destination="3NQ-jP-916" id="iZK-1N-hvQ"/>
+                        <outlet property="refresh" destination="vA2-ZN-5KI" id="bvT-lk-NHg"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mno-ax-8lG" userLabel="First Responder" sceneMemberID="firstResponder"/>
