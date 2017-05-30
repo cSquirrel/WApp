@@ -48,6 +48,8 @@ struct DefaultAPIServiceConfig {
     let baseURL: URL
     let apiKey: String
     
+    let cachingService: DataCachingService?
+    
     public func createEndpointURL(servicePath: String, queryParams: [String:String]? = nil) -> URL {
         
         var result = URL(string:baseURL.absoluteString)!
@@ -69,6 +71,9 @@ class DefaultAPIService: NSObject {
         
         static let apiKeyQueryParam = "APPID"
         static let endpointForecast = "forecast"
+        // The application supports only one location now
+        // so hardcoded cache key will do for now
+        static let cacheKey = "cache_key"
     }
     
     private let config: DefaultAPIServiceConfig
@@ -82,8 +87,17 @@ class DefaultAPIService: NSObject {
     typealias FetchForecastResult = (_ resultStatus: ForecastResultStatus) -> ()
     func fetchForecast(query: ForecastAPIQuery, result: @escaping FetchForecastResult) {
         
-        // TODO: check cache first
+        // Fetch data from cache if available ...
+        if let data = config.cachingService?.fetch(forKey: Const.cacheKey) {
+            
+            guard let location = Location.create(fromLocationAsJsonData: data) else {
+                result(.failed(nil))
+                return
+            }
+            result(.cached(location))
+        }
         
+        // ... otherwise make a network call
         let result = { (status: NetworkOperationStatus) in
             
             switch status {

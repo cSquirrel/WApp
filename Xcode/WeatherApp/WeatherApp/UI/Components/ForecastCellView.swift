@@ -22,6 +22,12 @@ class ForecastCellView: UITableViewCell {
 
 extension ForecastCellView: UICollectionViewDataSource {
 
+    enum Const {
+    
+        static let darkCellColour = UIColor(red: 0.85, green: 0.85, blue: 0.85, alpha: 1.0)
+        static let lightCellColour = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1.0)
+    }
+    
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let result = collectionView.dequeueReusableCell(withReuseIdentifier: "ForecastDetailsCell", for: indexPath)
@@ -29,7 +35,7 @@ extension ForecastCellView: UICollectionViewDataSource {
         if let forecastCollectionViewCell = result as? ForecastDetailsViewCellCollection {
             
             let isDarkCell = backgroundColorShift ? ((indexPath.row % 2) == 0) : ((indexPath.row % 2) != 0)
-            forecastCollectionViewCell.backgroundColor = isDarkCell ? UIColor.lightGray:UIColor.white
+            forecastCollectionViewCell.backgroundColor = isDarkCell ? Const.lightCellColour:Const.darkCellColour
             
             let forecastDetail = forecastDetails[indexPath.row]
             let time = forecastDetail.dateTime.characters.split(separator: " ").map(String.init).last

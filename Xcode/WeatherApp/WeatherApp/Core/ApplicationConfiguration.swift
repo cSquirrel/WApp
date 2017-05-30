@@ -20,14 +20,19 @@ class ApplicationConfiguration: NSObject {
         
         let networkingService = DefaultNetworkingService()
         let networkExecutor = DefaultNetworkOperationsExecutor(configuration: .default)
+        // NOTE: data caching service is not fully implemented
+        // I added it here only to show how it is used by the API
+        let cachingService = DummyDataCachingService()
         
+        // These values are hardcoded here but should be provided from an external configuration file
         let baseURL = URL(string:"http://api.openweathermap.org/data/2.5")!
         let apiKey = "8706462a73422ae8125334f257b25e76"
         
         let apiConfig = DefaultAPIServiceConfig(networkingService: networkingService,
                                                 networkOperationsExecutor: networkExecutor,
                                            baseURL: baseURL,
-                                           apiKey: apiKey)
+                                           apiKey: apiKey,
+                                           cachingService: cachingService)
         apiAccess = DefaultAPIService(apiConfig)
     }
     

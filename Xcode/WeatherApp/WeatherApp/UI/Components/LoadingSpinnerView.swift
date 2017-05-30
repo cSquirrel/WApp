@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoadingSpinnerView: DesignableView {
+class LoadingSpinnerView: UIView {
     
     private var isViewHidden = true
     
@@ -20,6 +20,24 @@ class LoadingSpinnerView: DesignableView {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func awakeFromNib() {
+        setupView()
+    }
+    
+    func setupView() {
+        
+        let selfType = type(of:self)
+        let bundle = Bundle(for: selfType)
+        let nib = UINib.init(nibName: "\(selfType)", bundle: bundle)
+        let views = nib.instantiate(withOwner: self, options: nil)
+        guard let view = views.first as? UIView else {
+            return
+        }
+        view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        view.frame = self.bounds
+        self.addSubview(view)
     }
     
     func show(inView superview: UIView) {
