@@ -8,6 +8,12 @@
 
 import UIKit
 
+/**
+ * API uses it to execute the execute network operations.
+ *
+ * The way the network operations are executed may be different 
+ * depending on API this is why it's not a part of networking service.
+ */
 public protocol NetworkOperationsExecutor {
     
     func execute(operation: @escaping NetworkOperationBlock)
