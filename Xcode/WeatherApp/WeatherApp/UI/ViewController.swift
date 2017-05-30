@@ -77,18 +77,37 @@ extension ViewController {
             case 1:
                 title = "TOMORROW"
             default:
-                title = key
+                title = ViewController.format(dateString:key)
         }
     
         let forecastDetails = selectedLocation?.forecastByDay[key]
         
         if let forecastCellView = result as? ForecastCellView {
+            
             forecastCellView.title.text = title
             forecastCellView.forecastDetails = forecastDetails
             forecastCellView.backgroundColorShift = (indexPath.row % 2) == 0
             
         }
         
+        return result
+    }
+    
+    static func format(dateString:String) -> String {
+    
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        guard let date = dateFormatter.date(from: dateString) else {
+            return dateString
+        }
+        
+        let dateFormatter2 = DateFormatter()
+        dateFormatter2.locale = Locale(identifier: "en_US_POSIX")
+        dateFormatter2.timeZone = TimeZone(secondsFromGMT: 0)
+        dateFormatter2.dateFormat = "EEEE, d MMM"
+        let result = dateFormatter2.string(from: date)
         return result
     }
 }

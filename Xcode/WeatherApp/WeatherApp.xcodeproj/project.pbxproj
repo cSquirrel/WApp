@@ -16,6 +16,7 @@
 		32893E741EDD0A4F00B7F601 /* LoadingSpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32893E721EDD0A4F00B7F601 /* LoadingSpinnerView.swift */; };
 		32893E751EDD0A4F00B7F601 /* LoadingSpinnerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32893E731EDD0A4F00B7F601 /* LoadingSpinnerView.xib */; };
 		32893E771EDD0A6D00B7F601 /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32893E761EDD0A6D00B7F601 /* DesignableView.swift */; };
+		32893E7A1EDD589B00B7F601 /* ViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32893E791EDD589B00B7F601 /* ViewControllerTests.swift */; };
 		32BBF2F71EDCBEA300CEB101 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32BBF2F51EDCBEA300CEB101 /* Main.storyboard */; };
 		32BBF2F91EDCBEA300CEB101 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32BBF2F81EDCBEA300CEB101 /* Assets.xcassets */; };
 		32BBF2FC1EDCBEA300CEB101 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32BBF2FA1EDCBEA300CEB101 /* LaunchScreen.storyboard */; };
@@ -63,6 +64,7 @@
 		32893E721EDD0A4F00B7F601 /* LoadingSpinnerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingSpinnerView.swift; sourceTree = "<group>"; };
 		32893E731EDD0A4F00B7F601 /* LoadingSpinnerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingSpinnerView.xib; sourceTree = "<group>"; };
 		32893E761EDD0A6D00B7F601 /* DesignableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
+		32893E791EDD589B00B7F601 /* ViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerTests.swift; sourceTree = "<group>"; };
 		32BBF2EE1EDCBEA300CEB101 /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32BBF2F61EDCBEA300CEB101 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		32BBF2F81EDCBEA300CEB101 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -145,6 +147,14 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
+		32893E781EDD588D00B7F601 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				32893E791EDD589B00B7F601 /* ViewControllerTests.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		32BBF2E51EDCBEA300CEB101 = {
 			isa = PBXGroup;
 			children = (
@@ -183,6 +193,7 @@
 		32BBF3051EDCBEA300CEB101 /* WeatherAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				32893E781EDD588D00B7F601 /* UI */,
 				32BBF33B1EDCE68300CEB101 /* Mock */,
 				32BBF3301EDCC3B800CEB101 /* MockData */,
 				32BBF32D1EDCC37800CEB101 /* API */,
@@ -412,6 +423,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32893E7A1EDD589B00B7F601 /* ViewControllerTests.swift in Sources */,
 				32BBF33A1EDCE2ED00CEB101 /* APIServiceTests.swift in Sources */,
 				32BBF33D1EDCE69400CEB101 /* MockNetworkingService.swift in Sources */,
 				32BBF32F1EDCC37800CEB101 /* DataModelTests.swift in Sources */,
